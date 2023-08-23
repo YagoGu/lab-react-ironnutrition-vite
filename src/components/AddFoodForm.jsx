@@ -1,5 +1,6 @@
 // Your code here
 import { useState } from "react";
+import { Card, Row, Col, Divider, Input, Button } from "antd";
 
 function AddFoodForm(props) {
 
@@ -36,10 +37,11 @@ function AddFoodForm(props) {
 
     return (
         <div>
-            <h3>Add Food Entry</h3>
             <form>
+                <Divider>Add Food Entry</Divider>
+                
                 <label>Name: </label>
-                <input
+                <Input
                 type="text"
                 name="name"
                 onChange={(event) => setName(event.target.value)}
@@ -47,7 +49,7 @@ function AddFoodForm(props) {
                 />
 
                 <label>Image: </label>
-                <input
+                <Input
                 type="text"
                 name="image"
                 onChange={(event) => setImage(event.target.value)}
@@ -55,7 +57,7 @@ function AddFoodForm(props) {
                 />
 
                 <label>Calories: </label>
-                <input
+                <Input
                 type="number"
                 name="calories"
                 onChange={(event) => setCalories(event.target.value)}
@@ -63,14 +65,14 @@ function AddFoodForm(props) {
                 />
 
                 <label>Servings: </label>
-                <input
+                <Input
                 type="number"
                 name="servings"
                 onChange={(event) => setServings(event.target.value)}
                 value={servings}
                 />
 
-                <button onClick={(e) => handleSubmit(e)} type="submit">Add a Food</button>
+                <Button onClick={(e) => handleSubmit(e)} type="submit">Add a Food</Button>
             </form>
         </div>
     )
